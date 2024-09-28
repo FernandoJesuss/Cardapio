@@ -3,17 +3,15 @@ const buttonShowAll = document.querySelector(".show-all");
 let myLi = "";
 
 function showAll() {
-    menuOptions.forEach((product) => {
+    myLi = ""; // Reinicia myLi para evitar duplicatas
+    menuOptions.forEach((products) => {
         myLi += `
     <li>
-    
-    <img src=${Product.src}>
-    <p>${product.name}</p>
-    <p class="item-price">R$ ${product.price}</p>
-    
+        <img src="${products.src}">
+        <p>${products.name}</p>
+        <p class="item-price">R$ ${products.price}</p>
     </li>
-    
-    `
+    `;
     });
 
     list.innerHTML = myLi;
