@@ -3,21 +3,36 @@
 
 const list = document.querySelector("ul");
 const buttonShowAll = document.querySelector(".show-all");
-const buttonmapAll = document.querySelector(".map-all");
+const buttonMapAll = document.querySelector(".map-all");
 const sumAll = document.querySelector(".sum-all");
+const filterAll = document.querySelector(".filter-all");
+
+//Formata o Valor para Reail
+
+function formatCurrency(value) {
+
+const newValue = value.toLocaleString("pt-BR", {
+    style: "currency",
+    currency: "BRL",
+})
+
+return newValue;
+
+
+}
 
 let myLi = "";
 
 function showAll(productsArray) {
     myLi = ""; // Reinicia myLi para evitar duplicatas
-    productsArray.forEach((products) => {
+    productsArray.forEach((product) => {
         myLi += `
     <li>
-        <img src="${products.src}">
-        <p>${products.name}</p>
-        <p class="item-price">R$ ${products.price}</p>
+        <img src="${product.src}">
+        <p>${product.name}</p>
+        <p class="item-price">${formatCurrency(product.price)}</p>
     </li>
-    `;
+    `
     });
 
     list.innerHTML = myLi;
@@ -26,9 +41,9 @@ function showAll(productsArray) {
 // Map
 
 function mapAllItems() {
-    const newPrices = menuOptions.map((products) => ({
-        ...products,
-        price: products.price * 0.9,
+    const newPrices = menuOptions.map((product) => ({
+        ...product,
+        price: product.price * 0.9,
 
     }));
 
@@ -40,22 +55,27 @@ function mapAllItems() {
 
 function sumAllItems() {
 
-    const totalValue = menuOptions.reduce((acc, curr) => acc + curr.price, 0)
+    const totalValue = menuOptions.reduce((acc, curr) => acc + curr.price, 0);
 
     list.innerHTML =  `
       <li>
-       <p>O Valor total dos itens é R$: ${totalValue}</p>
+       <p>O Valor total dos itens é: ${formatCurrency(totalValue)}</p>
        </li>  
 
          `
-
 };
 
+// Filter
 
+function filterAllItems() {
 
+    const filterJustVegan = menuOptions.filter((product) => product.vegan)
 
+    showAll(filterJustVegan);
 
+}
 
 buttonShowAll.addEventListener("click", () => showAll(menuOptions));
-buttonmapAll.addEventListener("click", mapAllItems);
+buttonMapAll.addEventListener("click", mapAllItems);
 sumAll.addEventListener("click", sumAllItems);
+filterAll.addEventListener("click", filterAllItems);
