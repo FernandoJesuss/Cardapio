@@ -1,4 +1,3 @@
-
 // ForEch
 
 const list = document.querySelector("ul");
@@ -10,69 +9,61 @@ const filterAll = document.querySelector(".filter-all");
 //Formata o Valor para Reail
 
 function formatCurrency(value) {
-
-const newValue = value.toLocaleString("pt-BR", {
+  const newValue = value.toLocaleString("pt-BR", {
     style: "currency",
     currency: "BRL",
-})
+  });
 
-return newValue;
-
-
+  return newValue;
 }
 
 let myLi = "";
 
 function showAll(productsArray) {
-    myLi = ""; // Reinicia myLi para evitar duplicatas
-    productsArray.forEach((product) => {
-        myLi += `
+  myLi = ""; // Reinicia myLi para evitar duplicatas
+  productsArray.forEach((product) => {
+    myLi += `
     <li>
         <img src="${product.src}">
         <p>${product.name}</p>
         <p class="item-price">${formatCurrency(product.price)}</p>
     </li>
-    `
-    });
+    `;
+  });
 
-    list.innerHTML = myLi;
+  list.innerHTML = myLi;
 }
 
 // Map
 
 function mapAllItems() {
-    const newPrices = menuOptions.map((product) => ({
-        ...product,
-        price: product.price * 0.9,
+  const newPrices = menuOptions.map((product) => ({
+    ...product,
+    price: product.price * 0.9,
+  }));
 
-    }));
-
-    showAll(newPrices);
-
+  showAll(newPrices);
 }
 
 // Reduce
 
 function sumAllItems() {
+  const totalValue = menuOptions.reduce((acc, curr) => acc + curr.price, 0);
 
-    const totalValue = menuOptions.reduce((acc, curr) => acc + curr.price, 0);
-
-    list.innerHTML =  `
+  list.innerHTML = `
       <li>
        <p>O Valor total dos itens é: ${formatCurrency(totalValue)}</p>
        </li>  
 
-         `
-};
+         `;
+}
 
 // Filter
 
 function filterAllItems() {
+  const filterJustVegan = menuOptions.filter((product) => product.vegan);
 
-    const filterJustVegan = menuOptions.filter((product) => product.vegan)
-
-    showAll(filterJustVegan);
-
+  showAll(filterJustVegan);
 }
 
 buttonShowAll.addEventListener("click", () => showAll(menuOptions));

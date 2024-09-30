@@ -27,17 +27,18 @@ button {
 background-color: #79cb15;
 border: none;
 border-radius: 5px;
-color: #000000;
+color: #fff;
 padding: 10px;
 cursor: pointer;
 font-weight: bold;
 width: 110px;
+transition: background-color 0.3s;
 
 }
 
 button:hover {
 opacity: 0.8;
-
+background-color: #45a049;
 }
 
 ul {
@@ -52,7 +53,14 @@ li {
 border: 2px solid #8133ff ;
 border-radius: 5px;
 padding: 5px;
+text-align: center;
+    transition: transform 0.2s;
 
+}
+
+li:hover {
+
+    transform: scale(1.05);
 
 }
 
