@@ -70,3 +70,17 @@ buttonShowAll.addEventListener("click", () => showAll(menuOptions));
 buttonMapAll.addEventListener("click", mapAllItems);
 sumAll.addEventListener("click", sumAllItems);
 filterAll.addEventListener("click", filterAllItems);
+
+
+// Animação Letra por Letra Ola
+const letras = document.querySelectorAll('.letra');
+
+function animarLetras() {
+    letras.forEach((letra, index) => {
+        letra.style.animation = `movimento 2s infinite`;
+        letra.style.animationDelay = `${index * 0.2}s`; // Atraso entre letras
+        letra.style.opacity = 0; // Torna a letra visível
+    });
+}
+
+animarLetras(); // Chama a função
