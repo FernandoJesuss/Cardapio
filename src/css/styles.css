@@ -6,13 +6,12 @@
     box-sizing: border-box;
     font-family: "Poppins", sans-serif;
     background-color: #0a033a;
-    
+
 }
 
 body {
-    
-    background-color: #0a033a;
 
+    background-color: #0a033a;
 
 }
 
@@ -21,23 +20,19 @@ body {
     overflow: hidden;
     align-items: center;
     justify-content: center;
-    color: #fff;
+    color: #e74c3c;
     margin-top: 25px;
     font-size: 4em;
     font-weight: 700;
-
-
-    text-shadow: 
-    0 0 5px #00ff00, /* Verde neon */
-    0 0 10px #00ff00,
-    0 0 15px #00ff00,
-    0 0 20px #ff00ff, /* Rosa neon */
-    0 0 30px #ff00ff,
-    0 0 40px #ff00ff;
-    
+    text-shadow:
+        0 0 5px #00ff00,
+        0 0 10px #00ff00,
+        0 0 15px #00ff00,
+        0 0 20px #ff00ff,
+        0 0 30px #ff00ff,
+        0 0 40px #ff00ff;
 
 }
-
 
 .letra {
     display: inline-block;
@@ -72,6 +67,19 @@ body {
     width: 0.3em;
 }
 
+.neon-subtext {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5em;
+    margin-top: 10px;
+    color: #f1c40f;
+    text-shadow:
+        0 0 5px #00ffff,
+        0 0 10px #00ffff,
+        0 0 15px #00ffff;
+}
+
 .container-buttons {
     margin: 30px 0;
     display: flex;
@@ -97,6 +105,8 @@ button {
 button:hover {
     opacity: 0.8;
     background-color: #45a049;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
 }
 
 ul {
