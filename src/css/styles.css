@@ -150,3 +150,111 @@ p {
     color: #79cb15;
 
 }
+
+
+/* Estilos para dispositivos com largura máxima de 600px */
+@media screen and (max-width: 767px) {
+
+
+    .ola {
+        display: flex;
+        overflow: hidden;
+        align-items: center;
+        justify-content: center;
+        color: #e74c3c;
+        margin-top: 15%;
+        font-size: 1.5em;
+        font-weight: 500;
+        text-shadow:
+            0 0 5px #00ff00,
+            0 0 10px #00ff00,
+            0 0 15px #00ff00,
+            0 0 20px #ff00ff,
+            0 0 30px #ff00ff,
+            0 0 40px #ff00ff;
+    
+    }
+
+    .neon-subtext {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 0.8em;
+        margin-top: 5%;
+        color: #f1c40f;
+        text-shadow:
+            0 0 5px #00ffff,
+            0 0 10px #00ffff,
+            0 0 15px #00ffff;
+    }
+
+    .container-buttons {
+        margin: 30px 0;
+        width: 100%;
+        margin-top: 4rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1%;
+    
+    }
+    
+    button {
+        flex: 1;
+        margin: 5px;
+        background-color: #79cb15;
+        font-size: 64.8%;
+        border: none;
+        border-radius: 5px;
+        color: #fff;
+        padding: 10px;
+        cursor: pointer;
+        font-weight: bold;
+        width:100%;
+        text-align: center;
+      
+        transition: background-color 0.3s;
+    
+    }
+
+    ul {
+        list-style: none;
+        display: grid;
+        grid-template-columns: 28% 28% 28%;
+        gap: 20px;
+        justify-content: center;
+        margin-top: 10%;
+    
+    
+    }
+    
+    li {
+        border: 2px solid #8133ff;
+        border-radius: 5px;
+        padding: 5px;
+        text-align: center;
+        transition: transform 0.2s;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    p {
+        color: #fff;
+        font-size: 0.9em;
+    
+    }
+    
+    .item-price {
+        font-weight: bold;
+        color: #79cb15;
+    
+    }
+
+
+
+
+
+    /* body {
+      background-color: lightblue;
+    } */
+  }
+  
