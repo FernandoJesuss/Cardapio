@@ -1,4 +1,4 @@
-<h1 align="center"> Cardápio de Hambúrgueres</h1>
+<h1 align="center"> Cardápio Burger</h1>
 
 ## Descrição
 Este projeto apresenta um cardápio de hambúrgueres, mostrando diferentes opções de produtos e seus preços. O objetivo é fornecer uma interface interativa para visualizar as opções disponíveis.
